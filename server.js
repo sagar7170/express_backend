@@ -22,10 +22,9 @@ cloudinary.config({
     secure: true
 });
 
-// app.get('/',(req,res)=>{
-//     res.cookie('jwt',123);
-//     res.send('hello')
-// }) 
+app.get('/',(req,res)=>{
+    res.send('hello')
+}) 
 
 const db = `mongodb+srv://sagar:admin000@cluster0.hbxgpqx.mongodb.net/mernstack?retryWrites=true&w=majority`
 mongoose.connect(db).then(() => {
