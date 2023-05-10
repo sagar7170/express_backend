@@ -198,4 +198,5 @@ app.post('/Contect', authentication, async (req, res) => {
 //     res.json({message:"data"})
 // })
 
-app.listen(4000)  
+const PORT = process.env.PORT || 4000
+app.listen(PORT)  
