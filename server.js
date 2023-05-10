@@ -22,9 +22,11 @@ cloudinary.config({
     secure: true
 });
 
-app.get('/',(req,res)=>{
-    res.send('hello')
-}) 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+
+    app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+  }
 
 const db = `mongodb+srv://sagar:admin000@cluster0.hbxgpqx.mongodb.net/mernstack?retryWrites=true&w=majority`
 mongoose.connect(db).then(() => {
