@@ -141,6 +141,7 @@ app.post('/signIn', async (req, res) => {
             console.log("Jwt token is:", token);
             res.cookie("jwtoken", token, {
                 expires: new Date(Date.now() + 25892000000),
+                secure:"true",
                 httpOnly: true,
                 sameSite: "none",
             });
