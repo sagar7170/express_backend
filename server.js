@@ -22,15 +22,15 @@ cloudinary.config({
     secure: true
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
+// app.get('/', (req, res) => {
+//     res.send('Hello World!')
+//   })
   
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('client/build'));
 
-    app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
-  }
+//     app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+//   }
 
 const db = `mongodb+srv://sagar:admin000@cluster0.hbxgpqx.mongodb.net/mernstack?retryWrites=true&w=majority`
 mongoose.connect(db).then(() => {
@@ -199,4 +199,4 @@ app.post('/Contect', authentication, async (req, res) => {
 // })
 
 const PORT = process.env.PORT || 4000
-app.listen(PORT)  
+app.listen(PORT)      
