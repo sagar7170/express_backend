@@ -143,7 +143,7 @@ app.post('/signIn', async (req, res) => {
                 expires: new Date(Date.now() + 25892000000),
                 secure:"true",
                 httpOnly: true,
-                samesite:"None"
+                sameSite:"none"
             });
 
             if (!isMatch) {
